@@ -10,5 +10,8 @@
   "category_home": "Home",
   "category_personal": "Personal",
   "lbl_date": "Date",
-  "btn_add_task": "ADD TASK"
+  "btn_add_task": "ADD TASK",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "yesterday": "Yesterday"
 }

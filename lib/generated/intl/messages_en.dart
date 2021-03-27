@@ -34,6 +34,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "lbl_task_complete" : m0,
     "message_error_need_title" : MessageLookupByLibrary.simpleMessage("Please enter title"),
     "title_add_task" : MessageLookupByLibrary.simpleMessage("ADD TASK"),
-    "title_home" : MessageLookupByLibrary.simpleMessage("Home Tasks")
+    "title_home" : MessageLookupByLibrary.simpleMessage("Home Tasks"),
+    "today" : MessageLookupByLibrary.simpleMessage("Today"),
+    "tomorrow" : MessageLookupByLibrary.simpleMessage("Tomorrow"),
+    "yesterday" : MessageLookupByLibrary.simpleMessage("Yesterday")
   };
 }

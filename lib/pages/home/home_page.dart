@@ -125,11 +125,12 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 16),
                       Expanded(
                           child: ListView.builder(
                         itemBuilder: (_, index) =>
-                            _TaskItem(state.listTask[index]),
-                        itemCount: state.total,
+                            _TaskItem(index, HomeBloc.of(ctx).listTask[index]),
+                        itemCount: HomeBloc.of(ctx).total,
                       ))
                     ],
                   )),
@@ -162,15 +163,73 @@ class HomePage extends StatelessWidget {
 
 class _TaskItem extends StatelessWidget {
   final TaskDao task;
+  final int index;
 
-  _TaskItem(this.task);
+  _TaskItem(this.index, this.task);
 
   @override
   Widget build(BuildContext context) {
+    final isDoneTask = task.status == 1;
+
     return Container(
-      width: 50,
-      height: 50,
-      color: categoryColor,
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(bottom: 16),
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+            color: AppColor.h000000.withOpacity(0.1),
+            blurRadius: 6,
+            offset: Offset(4, 4))
+      ], color: AppColor.white, borderRadius: BorderRadius.circular(10)),
+      child: Row(
+        children: [
+          InkWell(
+            child: isDoneTask
+                ? Icon(Icons.check, size: 30, color: AppColor.h00e1b4)
+                : Container(
+                    width: 30,
+                    height: 30,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: AppColor.h00e1b4)),
+                  ),
+            onTap: () {
+              HomeBloc.of(context)
+                  .add(UpdateTask(index: index, doneTask: !isDoneTask));
+            },
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 15,
+                    height: 15,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle, color: categoryColor),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                      child: Text(
+                    task.title,
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
+                        color: AppColor.h3e3e3e),
+                  ))
+                ],
+              ),
+              Text(task.description,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      color: AppColor.h9d9d9d))
+            ],
+          ))
+        ],
+      ),
     );
   }
 

@@ -18,12 +18,12 @@ class AddTaskBloc extends Bloc<AddTaskEvent, AddTaskState> {
   @override
   Stream<AddTaskState> mapEventToState(event) async* {
     if (event is ChangeCategoryEvent) {
-      yield state.copyWith(filter: event.category, date: state.date);
+      yield state.copyWith(category: event.category);
       return;
     }
 
     if (event is ChangeDateEvent) {
-      yield state.copyWith(filter: state.category, date: event.date);
+      yield state.copyWith(date: event.date);
       return;
     }
 
@@ -48,8 +48,9 @@ class AddTaskState extends Equatable {
 
   AddTaskState({this.category = 0, required this.date});
 
-  AddTaskState copyWith({required int filter, required DateTime date}) {
-    return AddTaskState(category: filter, date: date);
+  AddTaskState copyWith({int? category, DateTime? date}) {
+    return AddTaskState(
+        category: category ?? this.category, date: date ?? this.date);
   }
 
   @override
