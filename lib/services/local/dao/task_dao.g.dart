@@ -16,12 +16,13 @@ class TaskDaoAdapter extends TypeAdapter<TaskDao> {
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return TaskDao()
-      ..title = fields[0] as String
-      ..description = fields[1] as String
-      ..createAt = fields[2] as DateTime
+    return TaskDao(
+      title: fields[0] as String,
+      description: fields[1] as String,
+      category: fields[4] as int,
+      createAt: fields[2] as DateTime,
+    )
       ..updateAt = fields[3] as DateTime?
-      ..filterType = fields[4] as int
       ..status = fields[5] as int;
   }
 
@@ -38,7 +39,7 @@ class TaskDaoAdapter extends TypeAdapter<TaskDao> {
       ..writeByte(3)
       ..write(obj.updateAt)
       ..writeByte(4)
-      ..write(obj.filterType)
+      ..write(obj.category)
       ..writeByte(5)
       ..write(obj.status);
   }

@@ -56,6 +56,116 @@ class S {
       args: [],
     );
   }
+
+  /// `{current}/{total} task complete`
+  String lbl_task_complete(Object current, Object total) {
+    return Intl.message(
+      '$current/$total task complete',
+      name: 'lbl_task_complete',
+      desc: '',
+      args: [current, total],
+    );
+  }
+
+  /// `ADD TASK`
+  String get title_add_task {
+    return Intl.message(
+      'ADD TASK',
+      name: 'title_add_task',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title here`
+  String get hint_title {
+    return Intl.message(
+      'Title here',
+      name: 'hint_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description here`
+  String get hint_description {
+    return Intl.message(
+      'Description here',
+      name: 'hint_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter title`
+  String get message_error_need_title {
+    return Intl.message(
+      'Please enter title',
+      name: 'message_error_need_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter`
+  String get lbl_filter {
+    return Intl.message(
+      'Filter',
+      name: 'lbl_filter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Work`
+  String get category_work {
+    return Intl.message(
+      'Work',
+      name: 'category_work',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get category_home {
+    return Intl.message(
+      'Home',
+      name: 'category_home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal`
+  String get category_personal {
+    return Intl.message(
+      'Personal',
+      name: 'category_personal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get lbl_date {
+    return Intl.message(
+      'Date',
+      name: 'lbl_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ADD TASK`
+  String get btn_add_task {
+    return Intl.message(
+      'ADD TASK',
+      name: 'btn_add_task',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

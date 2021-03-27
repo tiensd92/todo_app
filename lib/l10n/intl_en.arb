@@ -1,3 +1,14 @@
 {
-  "title_home": "Home Tasks"
+  "title_home": "Home Tasks",
+  "lbl_task_complete": "{current}/{total} task complete",
+  "title_add_task": "ADD TASK",
+  "hint_title": "Title here",
+  "hint_description": "Description here",
+  "message_error_need_title": "Please enter title",
+  "lbl_filter": "Filter",
+  "category_work": "Work",
+  "category_home": "Home",
+  "category_personal": "Personal",
+  "lbl_date": "Date",
+  "btn_add_task": "ADD TASK"
 }

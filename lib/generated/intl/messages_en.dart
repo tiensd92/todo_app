@@ -19,8 +19,21 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static m0(current, total) => "${current}/${total} task complete";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "btn_add_task" : MessageLookupByLibrary.simpleMessage("ADD TASK"),
+    "category_home" : MessageLookupByLibrary.simpleMessage("Home"),
+    "category_personal" : MessageLookupByLibrary.simpleMessage("Personal"),
+    "category_work" : MessageLookupByLibrary.simpleMessage("Work"),
+    "hint_description" : MessageLookupByLibrary.simpleMessage("Description here"),
+    "hint_title" : MessageLookupByLibrary.simpleMessage("Title here"),
+    "lbl_date" : MessageLookupByLibrary.simpleMessage("Date"),
+    "lbl_filter" : MessageLookupByLibrary.simpleMessage("Filter"),
+    "lbl_task_complete" : m0,
+    "message_error_need_title" : MessageLookupByLibrary.simpleMessage("Please enter title"),
+    "title_add_task" : MessageLookupByLibrary.simpleMessage("ADD TASK"),
     "title_home" : MessageLookupByLibrary.simpleMessage("Home Tasks")
   };
 }

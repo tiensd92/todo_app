@@ -18,9 +18,15 @@ class TaskDao extends HiveObject {
 
   // 0: work, 1: home, 2: personal
   @HiveField(4)
-  int filterType = 0;
+  int category = 0;
 
   // 0: doing, 1: done
   @HiveField(5)
   int status = 0;
+
+  TaskDao(
+      {this.title = '',
+      this.description = '',
+      this.category = 0,
+      required this.createAt});
 }
